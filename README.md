@@ -4,8 +4,7 @@
 - [Schematic and how to build](https://github.com/darkroasted/Arduino-Processing-integration/blob/main/README.md#how-to-build--schematic)
 - [Arduino Code]
 - [Processing Stucture]
-- [Processing Code]
-- [Processing: How to use]
+- [Processing Code](https://github.com/darkroasted/Arduino-Processing-integration/tree/main/RoboCop_ArduinoIntegration)
 
 ## How to build + Schematic
 The arduino part must be assembled according to the schematic below. After this the code can be uploaded
