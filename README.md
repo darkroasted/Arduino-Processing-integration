@@ -1,7 +1,7 @@
 # Arduino-Processing Integration for the Robocop Project
 
 ## Contents
-- Schematic and how to build[https://github.com/darkroasted/Arduino-Processing-integration/blob/main/README.md#how-to-build--schematic]
+- (Schematic and how to build)[https://github.com/darkroasted/Arduino-Processing-integration/blob/main/README.md#how-to-build--schematic]
 - Arduino Code
 - Processing Code
 - Processing: How to use
