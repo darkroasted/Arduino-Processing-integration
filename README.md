@@ -2,8 +2,8 @@
 
 ## Contents
 - [Schematic and how to build](https://github.com/darkroasted/Arduino-Processing-integration/blob/main/README.md#how-to-build--schematic)
-- [Arduino Code]
-- [Processing Stucture]
+- [Arduino Code](https://github.com/darkroasted/Arduino-Processing-integration#arduino-code)
+- [Processing Stucture](https://github.com/darkroasted/Arduino-Processing-integration#processing-structure)
 - [Processing Code](https://github.com/darkroasted/Arduino-Processing-integration/tree/main/RoboCop_ArduinoIntegration)
 
 ## How to build + Schematic
