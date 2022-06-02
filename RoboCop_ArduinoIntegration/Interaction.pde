@@ -1,12 +1,13 @@
-class Interaction {
-  void startPressed() {
+
+static class Interaction {
+  static void startPressed() {
     //Enter your code that should happen when the START button is clicked
     println("joepie");
   }
-  void yesPressed() {
+  static void yesPressed() {
     //Enter your code that should happen when the YES button is clicked
   }
-  void noPressed() {
+  static void noPressed() {
     //Enter your code that should happen when the NO button is clicked
   } 
   

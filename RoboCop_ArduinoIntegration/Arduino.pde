@@ -2,52 +2,45 @@ import processing.serial.*;
 Arduino arduino;
 
 class Arduino {
-  Interaction interaction;
-  Serial port;
-  String serialPort;
+  private Serial port;
 
-  boolean debug;
-  Arduino(int initPort, boolean initDebug) {
-    interaction = new Interaction();
-    if (initDebug == true) {
-      debug = true;
-    }
-    if (debug) {
+  boolean DEBUG;
+  Arduino(PApplet parent, int initPort, boolean initDebug, int baudr) {
+    DEBUG = initDebug;
+    
+    if (DEBUG) {
       println("Available serial ports:");
-      for (int i = 0; i<Serial.list().length; i++)
-      {
-        print("[" + i + "] ");
-        println(Serial.list()[i]);
-      }
+      printArray(Serial.list());
     }
-    serialPort = Serial.list()[initPort];
+    String serialPort = Serial.list()[initPort];
+    port = new Serial(parent, serialPort, baudr);
+    
   }
   void run() {
     while (port.available()>0) { // when there is incoming serial data
       String portOutput = port.readString();
-      if (debug) {
+      if (DEBUG) {
         println(portOutput);
       }
       if (portOutput.indexOf("start") > -1) {
-        interaction.startPressed();
-        if (debug) {
-          println("yes pressed");
-        }
+        Interaction.startPressed();
+         dbgPrintln("Press: {START/STOP}");
       }
       if (portOutput.indexOf("no") > -1) {
-        interaction.noPressed();
-        if (debug) {
-          println("no pressed");
-        }
+        Interaction.noPressed();
+        dbgPrintln("Press: {NO}");
       }
       if (portOutput.indexOf("yes") > -1) {
-        interaction.yesPressed();
-        if (debug) {
-          println("yes pressed");
-        }
+        Interaction.yesPressed();
+        dbgPrintln("Press: {YES}");
       }
     }
 
     //if ((char)port.read()
+  }
+  
+  void dbgPrintln(String in){
+    if(DEBUG)
+      println("[Arduino]: " + in);
   }
 }
