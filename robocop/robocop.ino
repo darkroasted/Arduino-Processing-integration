@@ -1,14 +1,14 @@
-const int startBtn = 2;
-const int yesBtn = 3;
-const int noBtn = 4;
-const int ledPin =  13;
+const int startBtn = 8;
+const int yesBtn = 9;
+const int noBtn = 10;
+const int ledPin =  7;
 
 bool startToggle = false;
 bool yesToggle = false;
 bool noToggle = false;
-
 bool on = false; 
 
+bool start = false;
 void setup() {
   pinMode(ledPin, OUTPUT);
   pinMode(startBtn, INPUT);
@@ -18,17 +18,23 @@ void setup() {
 }
 
 void loop() {
-  if (digitalRead(startBtn) == HIGH) {
+  start = digitalRead(startBtn);
+  if (start) {
     if (!startToggle) {
-      Serial.println("start");
-      startToggle = true;
+      startToggle = true; 
+      on = !on;
+      if (on) {
+        Serial.println("sonx");
+      } else{
+        Serial.println("soffx");
+      }
     }
   } else {
     startToggle = false;
   }
   if (digitalRead(yesBtn) == HIGH) {
     if (yesToggle == false) {
-      Serial.println("yes");
+      Serial.println("yex");
       yesToggle = true;
     }
   } else {
@@ -36,10 +42,13 @@ void loop() {
   }
   if (digitalRead(noBtn) == HIGH) {
     if (!noToggle) {
-     Serial.println("no");
+     Serial.println("nox");
      noToggle = true;
     }
   } else {
     noToggle = false;
   }
+  digitalWrite(ledPin,on);
+
+  delay(2); // Quick and dirty delay for debouncing;
 }

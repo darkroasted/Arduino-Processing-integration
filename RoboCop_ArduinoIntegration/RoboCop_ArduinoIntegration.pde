@@ -1,6 +1,7 @@
 
+
 void setup() {
-  arduino = new Arduino(this, 2, false, 9600);
+  arduino = new Arduino(this, 0, true, 9600);
 }
 
 

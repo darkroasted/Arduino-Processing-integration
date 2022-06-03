@@ -1,6 +1,6 @@
 
 static class Interaction {
-  static void startPressed() {
+  static void startPressed(boolean isOn) {
     //Enter your code that should happen when the START button is clicked
     println("joepie");
   }
