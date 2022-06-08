@@ -24,19 +24,19 @@ class Arduino {
     // Look for all the toggles
 
     if (portOutput.contains("son")) {
-      Interaction.startPressed(true);
+      startPressed(true);
       dbgPrintln("Press: {START}");
     }
     if (portOutput.contains("soff")) {
-      Interaction.startPressed(false);
+      startPressed(false);
       dbgPrintln("Press: {STOP}");
     }
     if (portOutput.contains("no")) {
-      Interaction.noPressed();
+      noPressed();
       dbgPrintln("Press: {NO}");
     }
     if (portOutput.contains("ye")) {
-      Interaction.yesPressed();
+      yesPressed();
       dbgPrintln("Press: {YES}");
     }
 
