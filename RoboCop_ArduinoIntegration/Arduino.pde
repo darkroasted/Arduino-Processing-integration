@@ -6,9 +6,10 @@ class Arduino {
   boolean prevStart = false;
   String portOutput = "";
   boolean DEBUG;
+  ArrayList<Interactible> interactibles;
   Arduino(PApplet parent, int initPort, boolean initDebug, int baudr) {
     DEBUG = initDebug;
-
+    interactibles = new ArrayList<Interactible>();
     if (DEBUG) {
       println("Available serial ports:");
       printArray(Serial.list());
@@ -46,6 +47,19 @@ class Arduino {
       //dbgPrintln("" + lastMessageEnd + " " + portOutput.length());
       if (lastMessageEnd > -1)
         portOutput = portOutput.subSequence(lastMessageEnd, portOutput.length() -1).toString();
+    }
+
+    void startPressed(boolean on) {
+      for (Interactible i : interactibles)
+        i.startPressed(on);
+    }
+    void noPressed() {
+      for (Interactible i : interactibles)
+        i.noPressed();
+    }
+    void yesPressed() {
+      for (Interactible i : interactibles)
+        i.yesPressed();
     }
   }
 
