@@ -1,3 +1,6 @@
+import processing.serial.*;
+Arduino arduino;
+
 void setup() {
   arduino = new Arduino(this, 0, true, 9600);
   

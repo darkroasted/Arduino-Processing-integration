@@ -1,6 +1,3 @@
-import processing.serial.*;
-Arduino arduino;
-
 class Arduino {
   private Serial port;
   boolean prevStart = false;
@@ -48,19 +45,19 @@ class Arduino {
       if (lastMessageEnd > -1)
         portOutput = portOutput.subSequence(lastMessageEnd, portOutput.length() -1).toString();
     }
+  }
 
-    void startPressed(boolean on) {
-      for (Interactible i : interactibles)
-        i.startPressed(on);
-    }
-    void noPressed() {
-      for (Interactible i : interactibles)
-        i.noPressed();
-    }
-    void yesPressed() {
-      for (Interactible i : interactibles)
-        i.yesPressed();
-    }
+  void startPressed(boolean on) {
+    for (Interactible i : interactibles)
+      i.startPressed(on);
+  }
+  void noPressed() {
+    for (Interactible i : interactibles)
+      i.noPressed();
+  }
+  void yesPressed() {
+    for (Interactible i : interactibles)
+      i.yesPressed();
   }
 
   void dbgPrintln(String in) {
